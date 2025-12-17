@@ -6,8 +6,8 @@ const nextConfig: NextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'i.pravatar.cc',
-        pathname: '/**', // Optional, specifies the image path pattern
+        hostname: 'randomuser.me',
+        pathname: '/api/**/**', // Optional, specifies the image path pattern
       },
       {
         protocol: 'https',
