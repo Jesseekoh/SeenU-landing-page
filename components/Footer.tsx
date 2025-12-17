@@ -23,24 +23,49 @@ export default function Footer() {
               <span className="inline-block text-sm">Company</span>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <Link href="/">About Us</Link>
+                  <Link
+                    href="https://www.instagram.com/seenu.io/"
+                    className="hover:text-pink-300 transition-colors relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-pink-300 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left"
+                  >
+                    Instagram
+                  </Link>
                 </li>
                 <li>
-                  <Link href="mailto:contact@seenu.io">Contact Us</Link>
+                  <Link
+                    href="mailto:contact@seenu.io"
+                    className="hover:text-pink-300 transition-colors relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-pink-300 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left"
+                  >
+                    Contact Us
+                  </Link>
                 </li>
               </ul>
             </nav>
-            <nav>
-              <span className="inline-block text-sm">legal</span>
+            <nav className="space-y-3">
+              <span className="inline-block text-sm">Legal</span>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <Link href={'/privacy'}>Privacy Policy</Link>
+                  <Link
+                    href={'/privacy'}
+                    className="hover:text-pink-300 transition-colors relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-pink-300 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left"
+                  >
+                    Privacy Policy
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/terms">Terms & Conditions</Link>
+                  <Link
+                    href="/terms"
+                    className="hover:text-pink-300 transition-colors relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-pink-300 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left"
+                  >
+                    Terms & Conditions
+                  </Link>
                 </li>
                 <li>
-                  <Link href="/safety">Safety Guidelines</Link>
+                  <Link
+                    href="/safety"
+                    className="hover:text-pink-300 transition-colors relative w-fit block after:block after:content-[''] after:absolute after:h-[2px] after:bg-pink-300 after:w-full after:scale-x-0 hover:after:scale-x-100 after:transition after:duration-300 after:origin-left"
+                  >
+                    Safety Guidelines
+                  </Link>
                 </li>
               </ul>
             </nav>

@@ -1,10 +1,11 @@
-"use client";
-import Link from "next/link";
-import React, { useEffect, useState } from "react";
-import Logo from "@/public/logo.svg";
-import { ArrowDownToLine } from "lucide-react";
-import DarkLogo from "@/public/logo-dark.svg";
-import Image from "next/image";
+'use client';
+import Link from 'next/link';
+import React, { useEffect, useState } from 'react';
+import Logo from '@/public/logo.svg';
+import { ArrowDownToLine } from 'lucide-react';
+import DarkLogo from '@/public/logo-dark.svg';
+import Image from 'next/image';
+import { Button } from './ui/button';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -35,12 +36,12 @@ const Navbar: React.FC = () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    window.addEventListener("resize", handleResize);
+    window.addEventListener('scroll', handleScroll, { passive: true });
+    window.addEventListener('resize', handleResize);
 
     return () => {
-      window.removeEventListener("scroll", handleScroll);
-      window.removeEventListener("resize", handleResize);
+      window.removeEventListener('scroll', handleScroll);
+      window.removeEventListener('resize', handleResize);
     };
   }, [lastScrollY]);
 
@@ -48,8 +49,8 @@ const Navbar: React.FC = () => {
     <>
       <header
         className={`fixed mx-auto w-full top-0 left-0 right-0 z-50 transition-colors duration-300 ease-out ${
-          isHidden ? "-translate-y-full" : "translate-y-0"
-        } ${scrolled ? "bg-white shadow-sm" : "bg-transparent"}`}
+          isHidden ? '-translate-y-full' : 'translate-y-0'
+        } `}
       >
         <nav className="">
           <div className="container mx-auto py-4 px-4 lg:px-0 flex h-16 items-center justify-between">
@@ -66,35 +67,21 @@ const Navbar: React.FC = () => {
             </div>
 
             {/* Desktop links */}
-            <div className="hidden lg:flex items-center gap-6 pr-4">
-              <a
-                href="#features"
-                className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+            <div className="hidden lg:flex items-center gap-4 pr-4">
+              <Link
+                href="/waitlist"
+                className="text-sm font-medium text-gray-700 hover:text-pink-500 dark:text-gray-300 dark:hover:text-pink-400 transition-colors"
               >
-                Features
-              </a>
-              <a
-                href="#pricing"
-                className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
+                Join Android Waitlist
+              </Link>
+              <Link
+                href="https://apps.apple.com/us/app/seenu/id6749520048"
+                target="_blank"
               >
-                Pricing
-              </a>
-              <a
-                href="#about"
-                className="text-sm font-medium text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white transition-colors"
-              >
-                About
-              </a>
-              <a
-                href="#contact"
-                className={`inline-flex items-center rounded-lg px-3 py-1.5 text-sm font-semibold shadow-sm transition-colors ${
-                  scrolled
-                    ? "bg-black text-white hover:bg-black/80"
-                    : "bg-gray-900 text-white hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/90"
-                }`}
-              >
-                Contact
-              </a>
+                <Button className="rounded-full px-6 bg-black text-white hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/90">
+                  Download App
+                </Button>
+              </Link>
             </div>
 
             {/* Mobile hamburger */}
@@ -114,7 +101,7 @@ const Navbar: React.FC = () => {
                 className="inline-flex items-center justify-center  bg-white/80 rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
               >
                 <svg
-                  className={`h-6 w-6 ${isMenuOpen ? "hidden" : "block"}`}
+                  className={`h-6 w-6 ${isMenuOpen ? 'hidden' : 'block'}`}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -128,7 +115,7 @@ const Navbar: React.FC = () => {
                   />
                 </svg>
                 <svg
-                  className={`h-6 w-6 ${isMenuOpen ? "block" : "hidden"}`}
+                  className={`h-6 w-6 ${isMenuOpen ? 'block' : 'hidden'}`}
                   xmlns="http://www.w3.org/2000/svg"
                   fill="none"
                   viewBox="0 0 24 24"
@@ -157,44 +144,31 @@ const Navbar: React.FC = () => {
       )}
       <div
         className={`lg:hidden fixed top-24 inset-x-0 z-50 origin-top transition-transform duration-300 ease-out ${
-          isMenuOpen ? "translate-y-0" : "-translate-y-4 pointer-events-none"
+          isMenuOpen ? 'translate-y-0' : '-translate-y-4 pointer-events-none'
         }`}
       >
         <div
           className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${
-            isMenuOpen ? "opacity-100" : "opacity-0"
+            isMenuOpen ? 'opacity-100' : 'opacity-0'
           } transition-opacity duration-200`}
         >
           <div className="rounded-xl bg-white/90 backdrop-blur-md shadow-md ring-1 ring-black/5 dark:bg-neutral-900/80">
             <div className="space-y-1 p-3">
-              <a
-                href="#features"
+              <Link
+                href="/waitlist"
                 className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Features
-              </a>
-              <a
-                href="#pricing"
-                className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                Pricing
-              </a>
-              <a
-                href="#about"
-                className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
-                onClick={() => setIsMenuOpen(false)}
-              >
-                About
-              </a>
-              <a
-                href="#contact"
+                Join Android Waitlist
+              </Link>
+              <Link
+                href="https://apps.apple.com/us/app/seenu/id6749520048"
+                target="_blank"
                 className="mt-2 block rounded-lg bg-gray-900 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/90 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Contact
-              </a>
+                Download App
+              </Link>
             </div>
           </div>
         </div>
