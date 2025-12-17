@@ -1,12 +1,9 @@
 // import Image from "next/image";
 import { ArrowDownToLine } from 'lucide-react';
-import Logo from '@/public/logo.svg';
-import Photo1 from '@/public/mason-supply-0EPdmsBguGU-unsplash.jpg';
 import DarkLogo from '@/public/logo-dark.svg';
 import Mockup from '@/public/iMockup - iPhone 15 Pro Max(2) Image.webp';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
 import Image from 'next/image';
 import Link from 'next/link';
 import OrbitingUserRing from '@/components/OrbitingUserRing';
@@ -76,12 +73,15 @@ export default function Home() {
                     who’s around, share updates, and build your local community
                     with classmates, neighbors, and friends.
                   </p>
-                  <Button asChild className="px-8! rounded-2xl py-6">
+                  <Button
+                    asChild
+                    className="rounded-2xl bg-black text-white hover:bg-black/90 px-12! py-6 text-lg font-medium"
+                  >
                     <Link
                       href={'https://apps.apple.com/us/app/seenu/id6749520048'}
                     >
-                      <ArrowDownToLine />
-                      Download SeenU on IOS
+                      Download on iOS
+                      <ArrowDownToLine className="h-4 w-4" />
                     </Link>
                   </Button>
                 </div>
@@ -126,29 +126,22 @@ export default function Home() {
                   </div>
                 </div>
               </section>
-              {/* <div className="mt-10 space-y-12">
-                <Card className="rounded-3xl bg-neutral-200">
-                  <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20">
-                    <Image
-                      className="rounded-2xl w-full block"
-                      alt="People chatting outdoors"
-                      src={Photo1}
-                      width={1280}
-                      height={720}
-                    />
-                    <div className="self-center space-y-4">
-                      <h2 className="text-2xl lg:text-5xl md:text-3xl font-semibold">
-                        Start the chat in person.
-                      </h2>
-                      <p className="text-lg lg:text-xl">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                        Consequatur tempora rerum eos!
-                      </p>
-                    </div>
-                  </CardContent>
-                </Card>
-              </div> */}
-
+              {/* Waitlist CTA Section */}
+              <div className="rounded-3xl bg-neutral-900 text-white p-10 md:p-16 text-center space-y-6">
+                <h2 className="text-3xl lg:text-5xl font-semibold">
+                  Android user? We haven&apos;t forgotten you.
+                </h2>
+                <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+                  Sign up for our waitlist to be the first to know when SeenU
+                  keeps it real on Android.
+                </p>
+                <Button
+                  asChild
+                  className="rounded-2xl bg-white text-black hover:bg-neutral-200 px-8 py-6 text-lg font-medium"
+                >
+                  <Link href="/waitlist">Join the Waitlist</Link>
+                </Button>
+              </div>
               <div className="rounded-3xl bg-pink-200 overflow-hidden">
                 <div className="relative flex p-10 flex-col lg:flex-row gap-6">
                   {/* Left content */}
@@ -159,7 +152,7 @@ export default function Home() {
 
                     <Button
                       asChild
-                      className="mt-6 flex items-center gap-2 rounded-2xl bg-black px-6 py-5 text-white hover:bg-black/90"
+                      className="rounded-2xl bg-black text-white hover:bg-black/90 px-12! py-6 text-lg font-medium"
                     >
                       <Link
                         href={
