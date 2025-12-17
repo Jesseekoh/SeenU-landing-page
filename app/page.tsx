@@ -1,65 +1,124 @@
-import Image from "next/image";
+// import Image from "next/image";
+import { ArrowDownToLine } from "lucide-react";
+import DarkLogo from "@/public/logo-dark.svg";
+import Logo from "@/public/logo.svg";
+import Mockup from "@/public/iMockup - iPhone 15 Pro Max(2) Image.webp";
+import { SiInstagram, SiAppstore } from "@icons-pack/react-simple-icons";
+import Navbar from "@/components/Navbar";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
 
+import Image from "next/image";
+import Link from "next/link";
+import OrbitingUserRing from "@/components/OrbitingUserRing";
+import Footer from "@/components/Footer";
 export default function Home() {
   return (
-    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={100}
-          height={20}
-          priority
-        />
-        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
-          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
-            To get started, edit the page.tsx file.
-          </h1>
-          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
-            Looking for a starting point or more instructions? Head over to{" "}
-            <a
-              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Templates
-            </a>{" "}
-            or the{" "}
-            <a
-              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-              className="font-medium text-zinc-950 dark:text-zinc-50"
-            >
-              Learning
-            </a>{" "}
-            center.
-          </p>
-        </div>
-        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
-          <a
-            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={16}
-              height={16}
-            />
-            Deploy Now
-          </a>
-          <a
-            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Documentation
-          </a>
-        </div>
-      </main>
-    </div>
+    <>
+      <Navbar />
+      <div className="flex min-h-screen font-sans">
+        <main className="flex w-full flex-col">
+          <section id="hero" className="bg-black">
+            <div className="container mx-auto relative pt-10 lg:pt-24 pb-20 px-6">
+              <OrbitingUserRing />
+
+              <div className="max-w-[800px] mx-auto text-center relative z-10">
+                <Image
+                  src={Logo}
+                  alt="logo"
+                  className="w-full h-auto"
+                  width={600}
+                  height={250}
+                />
+              </div>
+            </div>
+          </section>
+
+          <section id="misc">
+            <div className="container mx-auto px-4 pt-24">
+              {/*<div className="flex flex-col-reverse lg:flex-row-reverse lg:gap-10">*/}
+              <div className="grid grid-cols-1 gap-8 md:gap-12 lg:gap-20 md:grid-cols-2">
+                <div className="space-y-6 self-center">
+                  <h3 className="text-3xl lg:text-5xl font-semibold">
+                    Connect with people nearby in real life.
+                  </h3>
+                  <p className="text-lg lg:text-xl">
+                    Instead of likes, followers, and endless scrolling, SeenU
+                    shows you classmates, coworkers, and neighbors all around
+                    you — so real moments can actually begin.
+                  </p>
+                  <Button className="py-4">
+                    <ArrowDownToLine />
+                    Download SeenU
+                  </Button>
+                </div>
+                <Image
+                  className="rounded-2xl w-full  block place-self-center"
+                  alt="people"
+                  src={
+                    "https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fmeet-in-person.jpg&w=640&q=75"
+                  }
+                  width={1280}
+                  height={720}
+                />
+              </div>
+
+              <div className="mt-10 space-y-12">
+                <Card className="rounded-3xl bg-neutral-200">
+                  <CardContent className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 lg:gap-20">
+                    <Image
+                      className="rounded-2xl w-full block"
+                      alt="people"
+                      src={
+                        "https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fmeet-in-person.jpg&w=640&q=75"
+                      }
+                      width={1280}
+                      height={720}
+                    />
+                    <div className="self-center space-y-4">
+                      <h3 className="text-2xl lg:text-5xl md:text-3xl font-semibold">
+                        Start the chat in person.
+                      </h3>
+                      <p className="text-lg lg:text-xl">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                        Consequatur tempora rerum eos!
+                      </p>
+                    </div>
+                  </CardContent>
+                </Card>
+
+                <div className="rounded-3xl bg-pink-200 overflow-hidden">
+                  <div className="relative flex p-10 flex-col lg:flex-row gap-6">
+                    {/* Left content */}
+                    <div className="z-10 max-w-md">
+                      <h3 className="text-3xl lg:text-5xl font-semibold leading-tight text-black">
+                        Ready to join thousands already chatting on SeeU?
+                      </h3>
+
+                      <Button className="mt-6 flex items-center gap-2 rounded-2xl bg-black px-6 py-5 text-white hover:bg-black/90">
+                        Download on iOS
+                        <ArrowDownToLine className="h-4 w-4" />
+                      </Button>
+                    </div>
+
+                    {/* Right mockup */}
+                    <div className="pointer-events-none -mb-10 lg:object-cover  lg:origin-top">
+                      <Image
+                        src={Mockup}
+                        alt="SeeU app mockup"
+                        className="object-contain"
+                        priority
+                      />
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+
+      <Footer />
+    </>
   );
 }
