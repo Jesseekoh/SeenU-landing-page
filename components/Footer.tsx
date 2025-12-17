@@ -1,8 +1,8 @@
-import Image from "next/image";
-import Logo from "@/public/logo.svg";
-import { Button } from "./ui/button";
-import { ArrowDownToLine } from "lucide-react";
-import Link from "next/link";
+import Image from 'next/image';
+import Logo from '@/public/logo.svg';
+import { Button } from './ui/button';
+import { ArrowDownToLine } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -26,7 +26,7 @@ export default function Footer() {
                   <Link href="/">About Us</Link>
                 </li>
                 <li>
-                  <Link href="/contact">Contact Us</Link>
+                  <Link href="mailto:contact@seenu.io">Contact Us</Link>
                 </li>
               </ul>
             </nav>
@@ -34,7 +34,7 @@ export default function Footer() {
               <span className="inline-block text-sm">legal</span>
               <ul className="flex flex-col gap-3">
                 <li>
-                  <Link href={"/privacy"}>Privacy Policy</Link>
+                  <Link href={'/privacy'}>Privacy Policy</Link>
                 </li>
                 <li>
                   <Link href="/terms">Terms & Conditions</Link>

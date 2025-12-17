@@ -1,7 +1,7 @@
-import { Card, CardContent } from "@/components/ui/card";
-import DarkLogo from "@/public/logo-dark.svg";
-import Image from "next/image";
-import Link from "next/link";
+import { Card, CardContent } from '@/components/ui/card';
+import DarkLogo from '@/public/logo-dark.svg';
+import Image from 'next/image';
+import Link from 'next/link';
 
 export default function SafetyPage() {
   return (
@@ -52,8 +52,8 @@ export default function SafetyPage() {
               us:
             </p>
             <p>
-              Email:{" "}
-              <Link className="text-pink-400" href={"contact@seenu.io"}>
+              Email:{' '}
+              <Link className="text-pink-400" href={'mailto:contact@seenu.io'}>
                 contact@seenu.io
               </Link>
             </p>

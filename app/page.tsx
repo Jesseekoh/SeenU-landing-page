@@ -1,17 +1,16 @@
 // import Image from "next/image";
-import { ArrowDownToLine } from "lucide-react";
-import DarkLogo from "@/public/logo-dark.svg";
-import Logo from "@/public/logo.svg";
-import Mockup from "@/public/iMockup - iPhone 15 Pro Max(2) Image.webp";
-import { SiInstagram, SiAppstore } from "@icons-pack/react-simple-icons";
-import Navbar from "@/components/Navbar";
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-
-import Image from "next/image";
-import Link from "next/link";
-import OrbitingUserRing from "@/components/OrbitingUserRing";
-import Footer from "@/components/Footer";
+import { ArrowDownToLine } from 'lucide-react';
+import DarkLogo from '@/public/logo-dark.svg';
+import Logo from '@/public/logo.svg';
+import Mockup from '@/public/iMockup - iPhone 15 Pro Max(2) Image.webp';
+import { SiInstagram, SiAppstore } from '@icons-pack/react-simple-icons';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+import { Card, CardContent } from '@/components/ui/card';
+import Image from 'next/image';
+import Link from 'next/link';
+import OrbitingUserRing from '@/components/OrbitingUserRing';
+import Footer from '@/components/Footer';
 export default function Home() {
   return (
     <>
@@ -35,7 +34,7 @@ export default function Home() {
           </section>
 
           <section id="misc">
-            <div className="container mx-auto px-4 pt-24">
+            <div className="container mx-auto px-4 pt-24 space-y-12 lg:space-y-24 mb-12 lg:mb-16">
               {/*<div className="flex flex-col-reverse lg:flex-row-reverse lg:gap-10">*/}
               <div className="grid grid-cols-1 gap-8 md:gap-12 lg:gap-20 md:grid-cols-2">
                 <div className="space-y-6 self-center">
@@ -47,16 +46,20 @@ export default function Home() {
                     shows you classmates, coworkers, and neighbors all around
                     you — so real moments can actually begin.
                   </p>
-                  <Button className="py-4">
-                    <ArrowDownToLine />
-                    Download SeenU
-                  </Button>
+                  <Link
+                    href={'https://apps.apple.com/us/app/seenu/id6749520048'}
+                  >
+                    <Button className="px-8! rounded-2xl py-6">
+                      <ArrowDownToLine />
+                      Download SeenU on IOS
+                    </Button>
+                  </Link>
                 </div>
                 <Image
                   className="rounded-2xl w-full  block place-self-center"
                   alt="people"
                   src={
-                    "https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fmeet-in-person.jpg&w=640&q=75"
+                    'https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fmeet-in-person.jpg&w=640&q=75'
                   }
                   width={1280}
                   height={720}
@@ -70,7 +73,7 @@ export default function Home() {
                       className="rounded-2xl w-full block"
                       alt="people"
                       src={
-                        "https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fmeet-in-person.jpg&w=640&q=75"
+                        'https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fmeet-in-person.jpg&w=640&q=75'
                       }
                       width={1280}
                       height={720}
@@ -86,30 +89,29 @@ export default function Home() {
                     </div>
                   </CardContent>
                 </Card>
+              </div>
+              <div className="rounded-3xl bg-pink-200 overflow-hidden">
+                <div className="relative flex p-10 flex-col lg:flex-row gap-6">
+                  {/* Left content */}
+                  <div className="z-10 max-w-md">
+                    <h3 className="text-3xl lg:text-5xl font-semibold leading-tight text-black">
+                      Ready to join thousands already chatting on SeeU?
+                    </h3>
 
-                <div className="rounded-3xl bg-pink-200 overflow-hidden">
-                  <div className="relative flex p-10 flex-col lg:flex-row gap-6">
-                    {/* Left content */}
-                    <div className="z-10 max-w-md">
-                      <h3 className="text-3xl lg:text-5xl font-semibold leading-tight text-black">
-                        Ready to join thousands already chatting on SeeU?
-                      </h3>
+                    <Button className="mt-6 flex items-center gap-2 rounded-2xl bg-black px-6 py-5 text-white hover:bg-black/90">
+                      Download on iOS
+                      <ArrowDownToLine className="h-4 w-4" />
+                    </Button>
+                  </div>
 
-                      <Button className="mt-6 flex items-center gap-2 rounded-2xl bg-black px-6 py-5 text-white hover:bg-black/90">
-                        Download on iOS
-                        <ArrowDownToLine className="h-4 w-4" />
-                      </Button>
-                    </div>
-
-                    {/* Right mockup */}
-                    <div className="pointer-events-none -mb-10 lg:object-cover  lg:origin-top">
-                      <Image
-                        src={Mockup}
-                        alt="SeeU app mockup"
-                        className="object-contain"
-                        priority
-                      />
-                    </div>
+                  {/* Right mockup */}
+                  <div className="pointer-events-none -mb-10 lg:object-cover  lg:origin-top">
+                    <Image
+                      src={Mockup}
+                      alt="SeeU app mockup"
+                      className="object-contain"
+                      priority
+                    />
                   </div>
                 </div>
               </div>
