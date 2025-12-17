@@ -119,7 +119,7 @@ export default function Home() {
                 <div className="container mx-auto px-6">
                   <div className="text-center mb-16 space-y-4">
                     <h2 className="text-3xl lg:text-5xl font-semibold">
-                      Loved by students everywhere.
+                      Loved by users everywhere.
                     </h2>
                     <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
                       See what our community has to say about making real
