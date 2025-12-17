@@ -1,15 +1,9 @@
-import { Card, CardContent } from "@/components/ui/card";
-import DarkLogo from "@/public/logo-dark.svg";
-import Image from "next/image";
-import Link from "next/link";
+import { Card, CardContent } from '@/components/ui/card';
 
 export default function PrivacyPolicyPage() {
   return (
     <>
       <div className="container mx-auto max-w-215 py-10 space-y-4">
-        <Link href="/" className="inline-block">
-          <Image src={DarkLogo} alt="Brand logo" width={100} height={100} />
-        </Link>
         <div>
           <h1 className="text-3xl font-bold">Privacy Policy</h1>
           <p className="text-neutral-500">Effective date: August 23, 2025</p>
@@ -25,7 +19,7 @@ export default function PrivacyPolicyPage() {
             </p>
             <p className="notice p-4 bg-red-100 border-l-4 border-red-300 rounded-lg my-4">
               <strong>Summary:</strong> We collect account details you provide
-              (like email and phone number), device and usage information, and{" "}
+              (like email and phone number), device and usage information, and{' '}
               <em>approximate</em> proximity signals (e.g., Bluetooth) to enable
               nearby discovery features. We do not sell your personal
               information.
@@ -56,9 +50,9 @@ export default function PrivacyPolicyPage() {
                 features.
               </li>
               <li>
-                <strong>Approximate location &amp; proximity:</strong>{" "}
+                <strong>Approximate location &amp; proximity:</strong>{' '}
                 Bluetooth/nearby signals and similar technologies that enable
-                you to discover people close to you. We do <em>not</em>{" "}
+                you to discover people close to you. We do <em>not</em>{' '}
                 continuously track precise GPS location for this feature.
               </li>
               <li>
@@ -191,7 +185,7 @@ export default function PrivacyPolicyPage() {
 
             <h2 className="text-xl font-bold">11) Contact Us</h2>
             <p>
-              If you have questions or requests, contact us at{" "}
+              If you have questions or requests, contact us at{' '}
               <a href="mailto:ify@seenu.io">ify@seenu.io</a> or by mail at:
               SeenU Inc., 8735 Dunwoody Place, Ste N, Atlanta, GA 30350, USA.
             </p>

@@ -16,9 +16,12 @@ const Navbar: React.FC = () => {
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
+      const heroSection = document.getElementById('hero');
+      const heroHeight = heroSection?.offsetHeight || 0;
 
       // Hide when scrolling down, show when scrolling up
-      if (currentScrollY > lastScrollY && currentScrollY > 10) {
+      // Only hide if we've scrolled past the hero section
+      if (currentScrollY > lastScrollY && currentScrollY > heroHeight) {
         setIsHidden(true);
         setIsMenuOpen(false); // close mobile menu if user starts scrolling down
       } else {
@@ -70,7 +73,7 @@ const Navbar: React.FC = () => {
             <div className="hidden lg:flex items-center gap-4 pr-4">
               <Link
                 href="/waitlist"
-                className="text-sm font-medium text-gray-700 hover:text-pink-500 dark:text-gray-300 dark:hover:text-pink-400 transition-colors"
+                className="font-medium text-black hover:text-white dark:text-gray-300 dark:hover:text-pink-400 transition-colors"
               >
                 Join Android Waitlist
               </Link>
@@ -78,7 +81,7 @@ const Navbar: React.FC = () => {
                 href="https://apps.apple.com/us/app/seenu/id6749520048"
                 target="_blank"
               >
-                <Button className="rounded-full px-6 bg-black text-white hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/90">
+                <Button className="rounded-2xl px-6 py-6 bg-black text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-white/90">
                   Download App
                 </Button>
               </Link>
@@ -86,19 +89,19 @@ const Navbar: React.FC = () => {
 
             {/* Mobile hamburger */}
             <div className="flex gap-4 lg:hidden pr-2">
+              <Link href={'https://apps.apple.com/us/app/seenu/id6749520048'}>
+                <button
+                  aria-label="Download app button"
+                  className="inline-flex items-center justify-center  bg-white/80 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
+                >
+                  <ArrowDownToLine />
+                </button>
+              </Link>
               <button
                 aria-label="Toggle navigation"
                 aria-expanded={isMenuOpen}
                 onClick={() => setIsMenuOpen((v) => !v)}
-                className="inline-flex items-center justify-center  bg-white/80 rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
-              >
-                <ArrowDownToLine />
-              </button>
-              <button
-                aria-label="Toggle navigation"
-                aria-expanded={isMenuOpen}
-                onClick={() => setIsMenuOpen((v) => !v)}
-                className="inline-flex items-center justify-center  bg-white/80 rounded-md p-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
+                className="inline-flex items-center justify-center bg-white/80 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
               >
                 <svg
                   className={`h-6 w-6 ${isMenuOpen ? 'hidden' : 'block'}`}
@@ -152,19 +155,27 @@ const Navbar: React.FC = () => {
             isMenuOpen ? 'opacity-100' : 'opacity-0'
           } transition-opacity duration-200`}
         >
-          <div className="rounded-xl bg-white/90 backdrop-blur-md shadow-md ring-1 ring-black/5 dark:bg-neutral-900/80">
+          <div className="rounded-xl bg-white/90 w-full  backdrop-blur-md shadow-md ring-1 ring-black/5 dark:bg-neutral-900/80">
             <div className="space-y-1 p-3">
               <Link
                 href="/waitlist"
-                className="block rounded-lg px-3 py-2 text-sm font-medium text-gray-800 hover:bg-gray-100 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
+                className="block rounded-lg text-2xl px-3 py-2 font-medium text-gray-800 hover:bg-gray-100 active:bg-pink-100 active:text-pink-600 dark:text-gray-200 dark:hover:bg-neutral-800 dark:active:bg-neutral-800 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
-                Join Android Waitlist
+                Join Waitlist
+              </Link>
+              <Link
+                href="/safety"
+                target="_blank"
+                className="block rounded-lg text-2xl px-3 py-2 font-medium text-gray-800 hover:bg-gray-100 active:bg-pink-100 active:text-pink-600 dark:text-gray-200 dark:hover:bg-neutral-800 dark:active:bg-neutral-800 transition-colors"
+                onClick={() => setIsMenuOpen(false)}
+              >
+                Safety
               </Link>
               <Link
                 href="https://apps.apple.com/us/app/seenu/id6749520048"
                 target="_blank"
-                className="mt-2 block rounded-lg bg-gray-900 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/90 transition-colors"
+                className="block rounded-lg text-2xl px-3 py-2 font-medium text-gray-800 hover:bg-gray-100 active:bg-pink-100 active:text-pink-600 dark:text-gray-200 dark:hover:bg-neutral-800 dark:active:bg-neutral-800 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Download App

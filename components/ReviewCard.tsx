@@ -20,10 +20,7 @@ export default function ReviewCard({
 }: ReviewCardProps) {
   return (
     <Card
-      className={cn(
-        'h-full border-none bg-neutral-100/50 shadow-sm',
-        className
-      )}
+      className={cn('h-full border-none bg-neutral-100 shadow-sm', className)}
     >
       <CardContent className="p-6 flex flex-col justify-between h-full gap-4">
         <div className="space-y-4">

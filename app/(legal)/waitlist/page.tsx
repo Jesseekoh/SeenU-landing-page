@@ -1,38 +1,48 @@
-"use client";
-import React, { useState } from "react";
-import Navbar from "@/components/Navbar";
-import { Button } from "@/components/ui/button";
+'use client';
+import React, { useState } from 'react';
+import Navbar from '@/components/Navbar';
+import { Button } from '@/components/ui/button';
+
+import { useRouter } from 'next/navigation';
 
 export default function WaitlistPage() {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
+  const router = useRouter();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [bot, setBot] = useState(''); // Honeypot state
   const [status, setStatus] = useState<
-    "idle" | "loading" | "success" | "error"
-  >("idle");
+    'idle' | 'loading' | 'success' | 'error'
+  >('idle');
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setStatus("loading");
+
+    // If honeypot is filled, likely a bot. Pretend success but do nothing.
+    if (bot) {
+      router.push('/thank-you');
+      return;
+    }
+
+    setStatus('loading');
 
     try {
-      // TODO: wire up with your backend endpoint
-      // Example:
-      // const res = await fetch("/api/waitlist", {
-      //   method: "POST",
-      //   headers: { "Content-Type": "application/json" },
-      //   body: JSON.stringify({ name, email }),
-      // });
-      // if (!res.ok) throw new Error("Failed to join waitlist");
+      const res = await fetch('/api/waitlist', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ name, email }),
+      });
 
-      // Simulate success for now
-      await new Promise((resolve) => setTimeout(resolve, 800));
-      setStatus("success");
-      setName("");
-      setEmail("");
+      if (!res.ok) throw new Error('Failed to join waitlist');
+
+      setName('');
+      setEmail('');
+      setBot('');
+
+      router.push('/thank-you');
     } catch (err) {
-      setStatus("error");
+      setStatus('error');
     } finally {
-      setTimeout(() => setStatus("idle"), 2500);
+      setTimeout(() => setStatus('idle'), 2500);
     }
   };
 
@@ -47,8 +57,8 @@ export default function WaitlistPage() {
                 Join the Waitlist
               </h1>
               <p className="text-muted-foreground">
-                Be the first to know when SeenU launches. Enter your details
-                below.
+                Be the first to know when SeenU launches on Android. Enter your
+                details below.
               </p>
             </div>
 
@@ -56,6 +66,22 @@ export default function WaitlistPage() {
               onSubmit={handleSubmit}
               className="mt-8 space-y-4 rounded-2xl border p-6 bg-card"
             >
+              {/* HONEYPOT FIELD - bot should keep this empty */}
+              <div className="hidden">
+                <label htmlFor="bot-field">
+                  Don&apos;t fill this out if you&apos;re human:
+                </label>
+                <input
+                  id="bot-field"
+                  name="bot-field"
+                  type="text"
+                  value={bot}
+                  onChange={(e) => setBot(e.target.value)}
+                  tabIndex={-1}
+                  autoComplete="off"
+                />
+              </div>
+
               <div className="space-y-2">
                 <label htmlFor="name" className="text-sm font-medium">
                   Name
@@ -89,17 +115,17 @@ export default function WaitlistPage() {
               <Button
                 type="submit"
                 className="w-full py-4"
-                disabled={status === "loading"}
+                disabled={status === 'loading'}
               >
-                {status === "loading" ? "Joining..." : "Join Waitlist"}
+                {status === 'loading' ? 'Joining...' : 'Join Waitlist'}
               </Button>
 
-              {status === "success" && (
+              {status === 'success' && (
                 <p className="text-green-600 text-sm text-center">
                   You’re on the list! We’ll be in touch soon.
                 </p>
               )}
-              {status === "error" && (
+              {status === 'error' && (
                 <p className="text-destructive text-sm text-center">
                   Something went wrong. Please try again.
                 </p>
