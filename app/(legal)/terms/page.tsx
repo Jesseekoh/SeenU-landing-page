@@ -1,7 +1,7 @@
-import Link from "next/link";
-import DarkLogo from "@/public/logo-dark.svg";
-import Image from "next/image";
-import { Card, CardContent } from "@/components/ui/card";
+import Link from 'next/link';
+import DarkLogo from '@/public/logo-dark.svg';
+import Image from 'next/image';
+import { Card, CardContent } from '@/components/ui/card';
 export default function TermsPage() {
   return (
     <>
@@ -10,12 +10,12 @@ export default function TermsPage() {
           <Image src={DarkLogo} alt="Brand logo" width={100} height={100} />
         </Link>
         <div>
-          <h1 className="text-3xl font-bold">Privacy Policy</h1>
+          <h1 className="text-3xl font-bold">Terms &amp; Conditions</h1>
           <p className="text-neutral-500">Effective date: August 23, 2025</p>
         </div>
 
-        <Card className="card">
-          <CardContent>
+        <Card>
+          <CardContent className="space-y-4">
             <p>
               These Terms &amp; Conditions (“Terms”) govern your access to and
               use of SeenU, including our website, apps, and services
@@ -23,14 +23,14 @@ export default function TermsPage() {
               these Terms.
             </p>
 
-            <h2>1) Who We Are</h2>
+            <h2 className="text-xl font-bold">1) Who We Are</h2>
             <p>
-              SeenU Inc., based in Georgia, USA. Contact:{" "}
+              SeenU Inc., based in Georgia, USA. Contact:{' '}
               <a href="mailto:ify@seenu.io">ify@seenu.io</a>.
             </p>
 
-            <h2>2) Eligibility</h2>
-            <ul>
+            <h2 className="text-xl font-bold">2) Eligibility</h2>
+            <ul className="list-disc list-inside pl-8">
               <li>
                 You must be at least <strong>14 years old</strong> to use the
                 Service. If you are under 18, you need consent from a parent or
@@ -43,8 +43,8 @@ export default function TermsPage() {
               </li>
             </ul>
 
-            <h2>3) Your Account</h2>
-            <ul>
+            <h2 className="text-xl font-bold">3) Your Account</h2>
+            <ul className="list-disc list-inside pl-8">
               <li>
                 You are responsible for your account and for all activity that
                 occurs under it. Keep your credentials secure.
@@ -54,8 +54,8 @@ export default function TermsPage() {
               </li>
             </ul>
 
-            <h2>4) Proximity &amp; Safety</h2>
-            <ul>
+            <h2 className="text-xl font-bold">4) Proximity &amp; Safety</h2>
+            <ul className="list-disc list-inside pl-8">
               <li>
                 SeenU helps you discover people nearby using proximity
                 technologies (e.g., Bluetooth). Do not use the Service while
@@ -68,9 +68,9 @@ export default function TermsPage() {
               </li>
             </ul>
 
-            <h2>5) Acceptable Use</h2>
+            <h2 className="text-xl font-bold">5) Acceptable Use</h2>
             <p>You agree not to engage in the following:</p>
-            <ul>
+            <ul className="list-disc list-inside pl-8">
               <li>
                 Harassment, hate speech, threats, stalking, or any unlawful
                 activity.
@@ -88,8 +88,8 @@ export default function TermsPage() {
               </li>
             </ul>
 
-            <h2>6) Your Content</h2>
-            <ul>
+            <h2 className="text-xl font-bold">6) Your Content</h2>
+            <ul className="list-disc list-inside pl-8">
               <li>
                 You own the content you post. You grant SeenU a worldwide,
                 non-exclusive, royalty-free license to host, store, display,
@@ -102,8 +102,8 @@ export default function TermsPage() {
               </li>
             </ul>
 
-            <h2>7) Our Rights</h2>
-            <ul>
+            <h2 className="texth2l font-bold">7) Our Rights</h2>
+            <ul className="list-disc list-inside pl-8">
               <li>
                 The Service, including software, visual interfaces, graphics,
                 trademarks, and logos, is owned by SeenU and our licensors and
@@ -116,17 +116,17 @@ export default function TermsPage() {
               </li>
             </ul>
 
-            <h2>8) Third-Party Services</h2>
+            <h2 className="text-xl font-bold">8) Third-Party Services</h2>
             <p>
               We may link to or integrate with third-party services. We are not
               responsible for their content, policies, or practices.
             </p>
 
-            <h2>9) Termination</h2>
-            <ul>
+            <h2 className="text-xl font-bold">9) Termination</h2>
+            <ul className="list-disc list-inside pl-8">
               <li>
                 You may stop using the Service at any time. You can also request
-                deletion of your account by contacting us at{" "}
+                deletion of your account by contacting us at{' '}
                 <a href="mailto:ify@seenu.io">ify@seenu.io</a>.
               </li>
               <li>
@@ -135,7 +135,7 @@ export default function TermsPage() {
               </li>
             </ul>
 
-            <h2>10) Disclaimers</h2>
+            <h2 className="text-xl font-bold">10) Disclaimers</h2>
             <p>
               THE SERVICE IS PROVIDED “AS IS” AND “AS AVAILABLE” WITHOUT
               WARRANTIES OF ANY KIND, EXPRESS OR IMPLIED. WE DISCLAIM ALL
@@ -143,7 +143,7 @@ export default function TermsPage() {
               AND NON-INFRINGEMENT.
             </p>
 
-            <h2>11) Limitation of Liability</h2>
+            <h2 className="text-xl font-bold">11) Limitation of Liability</h2>
             <p>
               TO THE MAXIMUM EXTENT PERMITTED BY LAW, SEENU AND ITS AFFILIATES
               WILL NOT BE LIABLE FOR ANY INDIRECT, INCIDENTAL, SPECIAL,
@@ -157,7 +157,7 @@ export default function TermsPage() {
               AMOUNT YOU PAID US, IF ANY, IN THE PAST 12 MONTHS.
             </p>
 
-            <h2>12) Indemnity</h2>
+            <h2 className="text-xl font-bold">12) Indemnity</h2>
             <p>
               You agree to defend, indemnify, and hold harmless SeenU and its
               affiliates from any claims, liabilities, damages, losses, and
@@ -165,7 +165,9 @@ export default function TermsPage() {
               the Service or your violation of these Terms.
             </p>
 
-            <h2>13) Governing Law &amp; Dispute Resolution</h2>
+            <h2 className="text-xl font-bold">
+              13) Governing Law &amp; Dispute Resolution
+            </h2>
             <p>
               These Terms are governed by the laws of the State of Georgia,
               without regard to conflict of laws principles. Any dispute will be
@@ -174,16 +176,16 @@ export default function TermsPage() {
               relief in any court of competent jurisdiction.
             </p>
 
-            <h2>14) Changes to These Terms</h2>
+            <h2 className="text-xl font-bold">14) Changes to These Terms</h2>
             <p>
               We may update these Terms from time to time. If changes are
               material, we will notify you in the app or on our website. The
               “Effective date” above reflects the latest version.
             </p>
 
-            <h2>15) Contact</h2>
+            <h2 className="text-xl font-bold">15) Contact</h2>
             <p>
-              Questions? Contact us at{" "}
+              Questions? Contact us at{' '}
               <a href="mailto:ify@seenu.io">ify@seenu.io</a> or mail: SeenU
               Inc., 8735 Dunwoody Place, Ste N, Atlanta, GA 30350, USA.
             </p>
