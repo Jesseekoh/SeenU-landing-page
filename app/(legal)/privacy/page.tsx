@@ -191,7 +191,7 @@ export default function PrivacyPolicyPage() {
             <h2 className="text-xl font-bold">11) Contact Us</h2>
             <p>
               If you have questions or requests, contact us at{" "}
-              <a href="mailto:ify@seenu.io">ify@seenu.io</a> or by mail at:
+              <a href="mailto:ify@seenu.io" className="hover:underline">ify@seenu.io</a> or by mail at:
               SeenU Inc., 8735 Dunwoody Place, Ste N, Atlanta, GA 30350, USA.
             </p>
           </CardContent>
