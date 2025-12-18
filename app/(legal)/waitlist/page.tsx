@@ -29,7 +29,7 @@ export default function WaitlistPage() {
       const res = await fetch('/api/waitlist', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ name, email }),
+        body: JSON.stringify({ name, email, bot }),
       });
 
       if (!res.ok) throw new Error('Failed to join waitlist');
