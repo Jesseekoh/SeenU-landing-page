@@ -51,9 +51,13 @@ const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed mx-auto w-full top-0 left-0 right-0 z-50 transition-colors duration-300 ease-out ${
+        className={`fixed mx-auto w-full top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
           isHidden ? '-translate-y-full' : 'translate-y-0'
-        } `}
+        } ${
+          scrolled
+            ? 'bg-white/80 backdrop-blur-md shadow-sm dark:bg-neutral-900/80'
+            : 'bg-transparent'
+        }`}
       >
         <nav className="">
           <div className="container mx-auto py-4 px-4 lg:px-0 flex h-16 items-center justify-between">
@@ -92,7 +96,11 @@ const Navbar: React.FC = () => {
               <Link href={'https://apps.apple.com/us/app/seenu/id6749520048'}>
                 <button
                   aria-label="Download app button"
-                  className="inline-flex items-center justify-center  bg-white/80 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
+                  className={`inline-flex items-center justify-center rounded-md px-4 py-2 transition-colors ${
+                    scrolled
+                      ? 'bg-black text-white hover:bg-neutral-800'
+                      : 'bg-white/80 text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800'
+                  }`}
                 >
                   <ArrowDownToLine />
                 </button>
@@ -101,7 +109,11 @@ const Navbar: React.FC = () => {
                 aria-label="Toggle navigation"
                 aria-expanded={isMenuOpen}
                 onClick={() => setIsMenuOpen((v) => !v)}
-                className="inline-flex items-center justify-center bg-white/80 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
+                className={`inline-flex items-center justify-center rounded-md px-4 py-2 transition-colors ${
+                  scrolled
+                    ? 'bg-black text-white hover:bg-neutral-800'
+                    : 'bg-white/80 text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800'
+                }`}
               >
                 <svg
                   className={`h-6 w-6 ${isMenuOpen ? 'hidden' : 'block'}`}
@@ -155,7 +167,7 @@ const Navbar: React.FC = () => {
             isMenuOpen ? 'opacity-100' : 'opacity-0'
           } transition-opacity duration-200`}
         >
-          <div className="rounded-xl bg-white/90 w-full  backdrop-blur-md shadow-md ring-1 ring-black/5 dark:bg-neutral-900/80">
+          <div className="rounded-xl bg-white/90 w-full max-w-sm ml-auto backdrop-blur-md shadow-md ring-1 ring-black/5 dark:bg-neutral-900/80">
             <div className="space-y-1 p-3">
               <Link
                 href="/waitlist"

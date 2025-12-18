@@ -50,7 +50,7 @@ export default function WaitlistPage() {
     <>
       {/*<Navbar withDark={true} />*/}
       <main className="flex w-full flex-col">
-        <section className="container mx-auto px-6 pt-28 pb-16">
+        <section className="container mx-auto pt-28 pb-16">
           <div className="max-w-xl mx-auto">
             <div className="space-y-3 text-center">
               <h1 className="text-3xl md:text-4xl font-bold">
@@ -114,7 +114,7 @@ export default function WaitlistPage() {
 
               <Button
                 type="submit"
-                className="w-full py-4"
+                className="w-full py-6"
                 disabled={status === 'loading'}
               >
                 {status === 'loading' ? 'Joining...' : 'Join Waitlist'}

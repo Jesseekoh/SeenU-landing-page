@@ -34,6 +34,7 @@ const OrbitingUserRing = () => {
       <div className="relative z-20 h-16 w-16 rounded-full border-2 shadow-[0_0_30px_rgba(236,72,153,0.6)] md:h-28 md:w-28">
         <Image
           src={CENTER_IMAGE}
+          unoptimized
           alt="Center User"
           fill
           className="rounded-full object-cover"
@@ -45,7 +46,7 @@ const OrbitingUserRing = () => {
          MD/LG: 240px diameter (Radius 120px)
       */}
       <div
-        className="absolute z-10 flex animate-spin-slow items-center justify-center rounded-full border border-white/20 shadow-[0_0_25px_rgba(255,255,255,0.4)]
+        className="absolute z-10 flex animate-spin-slow items-center justify-center rounded-full border border-white/50 shadow-[0_0_25px_rgba(255,255,255,0.4)]
         h-[130px] w-[130px] [--radius:65px]
         md:h-[240px] md:w-[240px] md:[--radius:120px]"
       >
@@ -63,6 +64,7 @@ const OrbitingUserRing = () => {
                 <Image
                   src={user}
                   alt={`Inner User ${index}`}
+                  unoptimized
                   fill
                   className="object-cover"
                 />
@@ -77,7 +79,7 @@ const OrbitingUserRing = () => {
          MD/LG: 380px diameter. With icons (64px), total width ~444px (Safely < 450px).
       */}
       <div
-        className="absolute z-0 flex animate-spin-reverse-slow items-center justify-center rounded-full border border-white/20 shadow-[0_0_25px_rgba(255,255,255,0.4)]
+        className="absolute z-0 flex animate-spin-reverse-slow items-center justify-center rounded-full border border-white/50 shadow-[0_0_25px_rgba(255,255,255,0.4)]
         h-[230px] w-[230px] [--radius:115px]
         md:h-[380px] md:w-[380px] md:[--radius:190px]"
       >
@@ -96,6 +98,7 @@ const OrbitingUserRing = () => {
                   src={user}
                   alt={`Outer User ${index}`}
                   fill
+                  unoptimized
                   className="object-cover"
                 />
               </div>
