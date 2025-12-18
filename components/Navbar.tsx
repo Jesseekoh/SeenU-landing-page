@@ -51,9 +51,13 @@ const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed mx-auto w-full top-0 left-0 right-0 z-50 transition-colors duration-300 ease-out ${
+        className={`fixed mx-auto w-full top-0 left-0 right-0 z-50 transition-all duration-300 ease-out ${
           isHidden ? '-translate-y-full' : 'translate-y-0'
-        } `}
+        } ${
+          scrolled
+            ? 'bg-white/80 backdrop-blur-md shadow-sm dark:bg-neutral-900/80'
+            : 'bg-transparent'
+        }`}
       >
         <nav className="">
           <div className="container mx-auto py-4 px-4 lg:px-0 flex h-16 items-center justify-between">
