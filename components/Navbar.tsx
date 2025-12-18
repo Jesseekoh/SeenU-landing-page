@@ -96,7 +96,11 @@ const Navbar: React.FC = () => {
               <Link href={'https://apps.apple.com/us/app/seenu/id6749520048'}>
                 <button
                   aria-label="Download app button"
-                  className="inline-flex items-center justify-center  bg-white/80 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
+                  className={`inline-flex items-center justify-center rounded-md px-4 py-2 transition-colors ${
+                    scrolled
+                      ? 'bg-black text-white hover:bg-neutral-800'
+                      : 'bg-white/80 text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800'
+                  }`}
                 >
                   <ArrowDownToLine />
                 </button>
@@ -105,7 +109,11 @@ const Navbar: React.FC = () => {
                 aria-label="Toggle navigation"
                 aria-expanded={isMenuOpen}
                 onClick={() => setIsMenuOpen((v) => !v)}
-                className="inline-flex items-center justify-center bg-white/80 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
+                className={`inline-flex items-center justify-center rounded-md px-4 py-2 transition-colors ${
+                  scrolled
+                    ? 'bg-black text-white hover:bg-neutral-800'
+                    : 'bg-white/80 text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800'
+                }`}
               >
                 <svg
                   className={`h-6 w-6 ${isMenuOpen ? 'hidden' : 'block'}`}
