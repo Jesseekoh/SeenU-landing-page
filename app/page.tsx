@@ -145,8 +145,8 @@ export default function Home() {
               <div className="rounded-3xl bg-pink-200 overflow-hidden">
                 <div className="relative flex p-10 flex-col lg:flex-row gap-6">
                   {/* Left content */}
-                  <div className="z-10 max-w-md">
-                    <h2 className="text-3xl lg:text-5xl font-semibold leading-tight text-black">
+                  <div className="z-10 max-w-md text-black space-y-4">
+                    <h2 className="text-3xl lg:text-5xl font-semibold leading-tight">
                       Ready to join thousands already chatting on SeeU?
                     </h2>
 

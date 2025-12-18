@@ -92,7 +92,7 @@ const Navbar: React.FC = () => {
               <Link href={'https://apps.apple.com/us/app/seenu/id6749520048'}>
                 <button
                   aria-label="Download app button"
-                  className="inline-flex items-center justify-center  bg-white/80 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
+                  className="inline-flex items-center justify-center  bg-white/80 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
                 >
                   <ArrowDownToLine />
                 </button>
@@ -101,7 +101,7 @@ const Navbar: React.FC = () => {
                 aria-label="Toggle navigation"
                 aria-expanded={isMenuOpen}
                 onClick={() => setIsMenuOpen((v) => !v)}
-                className="inline-flex items-center justify-center bg-white/80 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-100 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
+                className="inline-flex items-center justify-center bg-white/80 rounded-md px-4 py-2 text-gray-700 hover:bg-gray-200 hover:text-gray-900 dark:text-gray-200 dark:hover:bg-neutral-800 transition-colors"
               >
                 <svg
                   className={`h-6 w-6 ${isMenuOpen ? 'hidden' : 'block'}`}
@@ -155,7 +155,7 @@ const Navbar: React.FC = () => {
             isMenuOpen ? 'opacity-100' : 'opacity-0'
           } transition-opacity duration-200`}
         >
-          <div className="rounded-xl bg-white/90 w-full  backdrop-blur-md shadow-md ring-1 ring-black/5 dark:bg-neutral-900/80">
+          <div className="rounded-xl bg-white/90 w-full max-w-sm ml-auto backdrop-blur-md shadow-md ring-1 ring-black/5 dark:bg-neutral-900/80">
             <div className="space-y-1 p-3">
               <Link
                 href="/waitlist"
