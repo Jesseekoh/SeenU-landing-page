@@ -2,30 +2,30 @@ import React from 'react';
 import Image from 'next/image';
 
 // Placeholder data
-const CENTER_IMAGE = 'https://randomuser.me/api/portraits/men/2.jpg';
+const CENTER_IMAGE = '/avatars/2.jpg';
 
 const INNER_CIRCLE_USERS = [
-  'https://randomuser.me/api/portraits/men/13.jpg',
-  'https://randomuser.me/api/portraits/women/14.jpg',
-  'https://randomuser.me/api/portraits/men/15.jpg',
-  'https://randomuser.me/api/portraits/men/16.jpg',
-  'https://randomuser.me/api/portraits/women/17.jpg',
+  '/avatars/13.jpg',
+  '/avatars/14.jpg',
+  '/avatars/15.jpg',
+  '/avatars/16.jpg',
+  '/avatars/17.jpg',
 ];
 
 const OUTER_CIRCLE_USERS = [
-  'https://randomuser.me/api/portraits/women/18.jpg',
-  'https://randomuser.me/api/portraits/men/19.jpg',
-  'https://randomuser.me/api/portraits/women/20.jpg',
-  'https://randomuser.me/api/portraits/men/21.jpg',
-  'https://randomuser.me/api/portraits/women/22.jpg',
-  'https://randomuser.me/api/portraits/men/23.jpg',
+  '/avatars/18.jpg',
+  '/avatars/19.jpg',
+  '/avatars/20.jpg',
+  '/avatars/21.jpg',
+  '/avatars/22.jpg',
+  '/avatars/23.jpg',
 ];
 
 const OrbitingUserRing = () => {
   return (
-    <div className="relative flex h-[450px] w-[450px] w-full flex-col items-center justify-center overflow-hidden">
+    <div className="relative flex h-[450px] w-full mx-auto flex-col items-center justify-center overflow-hidden">
       {/* Background Gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,_var(--tw-gradient-stops))] " />
+      <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] " />
 
       {/* --- Central Image --- */}
       {/* Mobile: h-16 w-16 (64px)
