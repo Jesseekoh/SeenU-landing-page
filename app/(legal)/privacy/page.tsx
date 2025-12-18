@@ -7,8 +7,8 @@ import Link from "next/link";
 export default function PrivacyPolicyPage() {
   return (
     <>
+      <Navbar />
       <div className="container mx-auto max-w-215 py-10 space-y-4">
-        <Navbar />
         <div>
           <h1 className="text-3xl font-bold">Privacy Policy</h1>
           <p className="text-neutral-500">Effective date: August 23, 2025</p>
