@@ -34,6 +34,7 @@ const OrbitingUserRing = () => {
       <div className="relative z-20 h-16 w-16 rounded-full border-2 shadow-[0_0_30px_rgba(236,72,153,0.6)] md:h-28 md:w-28">
         <Image
           src={CENTER_IMAGE}
+          unoptimized
           alt="Center User"
           fill
           className="rounded-full object-cover"
