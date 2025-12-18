@@ -48,9 +48,8 @@ const Navbar: React.FC = () => {
   return (
     <>
       <header
-        className={`fixed mx-auto w-full top-0 left-0 right-0 z-50 transition-colors duration-300 ease-out ${
-          isHidden ? '-translate-y-full' : 'translate-y-0'
-        } `}
+        className={`fixed mx-auto w-full top-0 left-0 right-0 z-50 transition-colors duration-300 ease-out ${isHidden ? '-translate-y-full' : 'translate-y-0'
+          } `}
       >
         <nav className="">
           <div className="container mx-auto py-4 px-4 lg:px-0 flex h-16 items-center justify-between">
@@ -80,6 +79,11 @@ const Navbar: React.FC = () => {
               >
                 <Button className="rounded-full px-6 bg-black text-white hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/90">
                   Download App
+                </Button>
+              </Link>
+              <Link href="/app/page.tsx">
+                <Button className="rounded-full px-6 bg-black text-white hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/90">
+                  Home
                 </Button>
               </Link>
             </div>
@@ -143,14 +147,12 @@ const Navbar: React.FC = () => {
         />
       )}
       <div
-        className={`lg:hidden fixed top-24 inset-x-0 z-50 origin-top transition-transform duration-300 ease-out ${
-          isMenuOpen ? 'translate-y-0' : '-translate-y-4 pointer-events-none'
-        }`}
+        className={`lg:hidden fixed top-24 inset-x-0 z-50 origin-top transition-transform duration-300 ease-out ${isMenuOpen ? 'translate-y-0' : '-translate-y-4 pointer-events-none'
+          }`}
       >
         <div
-          className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${
-            isMenuOpen ? 'opacity-100' : 'opacity-0'
-          } transition-opacity duration-200`}
+          className={`mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 ${isMenuOpen ? 'opacity-100' : 'opacity-0'
+            } transition-opacity duration-200`}
         >
           <div className="rounded-xl bg-white/90 backdrop-blur-md shadow-md ring-1 ring-black/5 dark:bg-neutral-900/80">
             <div className="space-y-1 p-3">
