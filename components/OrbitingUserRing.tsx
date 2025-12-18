@@ -64,6 +64,7 @@ const OrbitingUserRing = () => {
                 <Image
                   src={user}
                   alt={`Inner User ${index}`}
+                  unoptimized
                   fill
                   className="object-cover"
                 />
@@ -97,6 +98,7 @@ const OrbitingUserRing = () => {
                   src={user}
                   alt={`Outer User ${index}`}
                   fill
+                  unoptimized
                   className="object-cover"
                 />
               </div>
