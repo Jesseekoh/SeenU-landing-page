@@ -10,6 +10,7 @@ import OrbitingUserRing from '@/components/OrbitingUserRing';
 import Footer from '@/components/Footer';
 import ReviewCard from '@/components/ReviewCard';
 import ReviewsCarousel from '@/components/ReviewsCarousel';
+import FadeIn from '@/components/FadeIn';
 
 const REVIEWS = [
   {
@@ -47,13 +48,15 @@ export default function Home() {
               <OrbitingUserRing />
 
               <div className="max-w-[800px] mx-auto text-center relative z-10">
-                <Image
-                  src={DarkLogo}
-                  alt="SeenU Logo"
-                  className="w-full h-auto contrast-75"
-                  width={600}
-                  height={250}
-                />
+                <FadeIn delay={0.2}>
+                  <Image
+                    src={DarkLogo}
+                    alt="SeenU Logo"
+                    className="w-full h-auto contrast-75"
+                    width={600}
+                    height={250}
+                  />
+                </FadeIn>
               </div>
             </div>
           </section>
@@ -61,7 +64,10 @@ export default function Home() {
           <section id="misc" aria-label="Features">
             <div className="container mx-auto px-4 pt-24 space-y-12 lg:space-y-24 mb-12 lg:mb-16">
               <div className="grid grid-cols-1 gap-8 md:gap-12 lg:gap-20 md:grid-cols-2">
-                <div className="space-y-6 self-center order-last md:order-first">
+                <FadeIn
+                  className="space-y-6 self-center order-last md:order-first"
+                  direction="right"
+                >
                   <h2 className="text-3xl lg:text-5xl font-semibold">
                     Connect with people nearby in real life.
                   </h2>
@@ -84,34 +90,39 @@ export default function Home() {
                       <ArrowDownToLine className="h-4 w-4" />
                     </Link>
                   </Button>
-                </div>
-                <Image
-                  className="rounded-2xl w-full  block place-self-center"
-                  alt="Group of friends meeting in person"
-                  // src={
-                  //   'https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fmeet-in-person.jpg&w=640&q=75'
-                  // }
-                  src={
-                    'https://scontent.cdninstagram.com/v/t51.82787-15/539394714_17892766812303075_126716939138869554_n.jpg?stp=dst-jpg_e35_s640x640_sh0.08_tt6&_nc_cat=111&ig_cache_key=MzcwNzYzNjU3Mzc4NzU3MDkyOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4OTYwLnNkci5DMyJ9&_nc_ohc=IV940pJimjEQ7kNvwGSIppo&_nc_oc=AdmlYKk0iUYUyQiHt-WG1xGoSOhMVLazbqrcTFepjDL6vfQf0Ls7bqzhyQ-eBHhqkmk&_nc_ad=z-m&_nc_cid=1080&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=SmULT62WXHW35loz1VkPCA&oh=00_AfkSPjNaiPB4G4hAM7n9HiuGbpr7OExsz_W--16BgcR8Hg&oe=6948AE49'
-                  }
-                  width={1280}
-                  height={720}
-                />
+                </FadeIn>
+                <FadeIn
+                  className="place-self-center"
+                  delay={0.2}
+                  direction="left"
+                >
+                  <Image
+                    className="rounded-2xl w-full block"
+                    alt="Group of friends meeting in person"
+                    src={
+                      'https://scontent.cdninstagram.com/v/t51.82787-15/539394714_17892766812303075_126716939138869554_n.jpg?stp=dst-jpg_e35_s640x640_sh0.08_tt6&_nc_cat=111&ig_cache_key=MzcwNzYzNjU3Mzc4NzU3MDkyOA%3D%3D.3-ccb7-5&ccb=7-5&_nc_sid=58cdad&efg=eyJ2ZW5jb2RlX3RhZyI6InhwaWRzLjE0NDB4OTYwLnNkci5DMyJ9&_nc_ohc=IV940pJimjEQ7kNvwGSIppo&_nc_oc=AdmlYKk0iUYUyQiHt-WG1xGoSOhMVLazbqrcTFepjDL6vfQf0Ls7bqzhyQ-eBHhqkmk&_nc_ad=z-m&_nc_cid=1080&_nc_zt=23&_nc_ht=scontent.cdninstagram.com&_nc_gid=SmULT62WXHW35loz1VkPCA&oh=00_AfkSPjNaiPB4G4hAM7n9HiuGbpr7OExsz_W--16BgcR8Hg&oe=6948AE49'
+                    }
+                    width={1280}
+                    height={720}
+                  />
+                </FadeIn>
               </div>
               <section
                 id="reviews"
                 className="py-20 bg-neutral-200 rounded-2xl shadow-md"
               >
                 <div className="container mx-auto px-6">
-                  <div className="text-center mb-16 space-y-4">
-                    <h2 className="text-3xl lg:text-5xl font-semibold">
-                      Loved by users everywhere.
-                    </h2>
-                    <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
-                      See what our community has to say about making real
-                      connections.
-                    </p>
-                  </div>
+                  <FadeIn>
+                    <div className="text-center mb-16 space-y-4">
+                      <h2 className="text-3xl lg:text-5xl font-semibold">
+                        Loved by users everywhere.
+                      </h2>
+                      <p className="text-lg text-neutral-600 max-w-2xl mx-auto">
+                        See what our community has to say about making real
+                        connections.
+                      </p>
+                    </div>
+                  </FadeIn>
 
                   {/* Desktop Grid Layout */}
                   <div className="hidden md:grid md:grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
@@ -127,55 +138,59 @@ export default function Home() {
                 </div>
               </section>
               {/* Waitlist CTA Section */}
-              <div className="rounded-3xl bg-neutral-900 text-white p-10 md:p-16 text-center space-y-6">
-                <h2 className="text-3xl lg:text-5xl font-semibold">
-                  Android user? We haven&apos;t forgotten you.
-                </h2>
-                <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
-                  Sign up for our waitlist to be the first to know when SeenU
-                  keeps it real on Android.
-                </p>
-                <Button
-                  asChild
-                  className="rounded-2xl bg-white text-black hover:bg-neutral-200 px-8 py-6 text-lg font-medium"
-                >
-                  <Link href="/waitlist">Join the Waitlist</Link>
-                </Button>
-              </div>
-              <div className="rounded-3xl bg-pink-200 overflow-hidden">
-                <div className="relative flex p-10 flex-col lg:flex-row gap-6">
-                  {/* Left content */}
-                  <div className="z-10 max-w-md text-black space-y-4">
-                    <h2 className="text-3xl lg:text-5xl font-semibold leading-tight">
-                      Ready to join thousands already chatting on SeeU?
-                    </h2>
+              <FadeIn delay={0.2}>
+                <div className="rounded-3xl bg-neutral-900 text-white p-10 md:p-16 text-center space-y-6">
+                  <h2 className="text-3xl lg:text-5xl font-semibold">
+                    Android user? We haven&apos;t forgotten you.
+                  </h2>
+                  <p className="text-lg text-neutral-400 max-w-2xl mx-auto">
+                    Sign up for our waitlist to be the first to know when SeenU
+                    keeps it real on Android.
+                  </p>
+                  <Button
+                    asChild
+                    className="rounded-2xl bg-white text-black hover:bg-neutral-200 px-8 py-6 text-lg font-medium"
+                  >
+                    <Link href="/waitlist">Join the Waitlist</Link>
+                  </Button>
+                </div>
+              </FadeIn>
+              <FadeIn delay={0.4}>
+                <div className="rounded-3xl bg-pink-200 overflow-hidden">
+                  <div className="relative flex p-10 flex-col lg:flex-row gap-6">
+                    {/* Left content */}
+                    <div className="z-10 max-w-md text-black space-y-4">
+                      <h2 className="text-3xl lg:text-5xl font-semibold leading-tight">
+                        Ready to join thousands already chatting on SeeU?
+                      </h2>
 
-                    <Button
-                      asChild
-                      className="rounded-2xl bg-black text-white px-12! py-6 text-lg font-medium transition-transform duration-200 ease-in-out hover:scale-105 hover:bg-neutral-800 active:scale-95"
-                    >
-                      <Link
-                        href={
-                          'https://apps.apple.com/us/app/seenu/id6749520048'
-                        }
+                      <Button
+                        asChild
+                        className="rounded-2xl bg-black text-white px-12! py-6 text-lg font-medium transition-transform duration-200 ease-in-out hover:scale-105 hover:bg-neutral-800 active:scale-95"
                       >
-                        Download on iOS
-                        <ArrowDownToLine className="h-4 w-4" />
-                      </Link>
-                    </Button>
-                  </div>
+                        <Link
+                          href={
+                            'https://apps.apple.com/us/app/seenu/id6749520048'
+                          }
+                        >
+                          Download on iOS
+                          <ArrowDownToLine className="h-4 w-4" />
+                        </Link>
+                      </Button>
+                    </div>
 
-                  {/* Right mockup */}
-                  <div className="pointer-events-none -mb-10 lg:object-cover  lg:origin-top">
-                    <Image
-                      src={Mockup}
-                      alt="SeeU app mockup"
-                      className="object-contain"
-                      priority
-                    />
+                    {/* Right mockup */}
+                    <div className="pointer-events-none -mb-10 lg:object-cover  lg:origin-top">
+                      <Image
+                        src={Mockup}
+                        alt="SeeU app mockup"
+                        className="object-contain"
+                        priority
+                      />
+                    </div>
                   </div>
                 </div>
-              </div>
+              </FadeIn>
             </div>
           </section>
         </main>
