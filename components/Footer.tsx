@@ -20,7 +20,7 @@ export default function Footer() {
           </Link>
           <div className="flex space-x-20">
             <nav className="space-y-3">
-              <span className="inline-block text-sm">Company</span>
+              <span className="inline-block text-5xl">Company</span>
               <ul className="flex flex-col gap-3">
                 <li>
                   <Link
@@ -41,7 +41,7 @@ export default function Footer() {
               </ul>
             </nav>
             <nav className="space-y-3">
-              <span className="inline-block text-sm">Legal</span>
+              <span className="inline-block text-4xl">Legal</span>
               <ul className="flex flex-col gap-3">
                 <li>
                   <Link
