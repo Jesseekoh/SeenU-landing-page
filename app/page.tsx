@@ -75,7 +75,7 @@ export default function Home() {
                   </p>
                   <Button
                     asChild
-                    className="rounded-2xl bg-black text-white hover:bg-black/90 px-12! py-6 text-lg font-medium"
+                    className="rounded-2xl bg-black text-white px-12! py-6 text-lg font-medium transition-transform duration-200 ease-in-out hover:scale-105 hover:bg-neutral-800 active:scale-95"
                   >
                     <Link
                       href={'https://apps.apple.com/us/app/seenu/id6749520048'}
@@ -152,7 +152,7 @@ export default function Home() {
 
                     <Button
                       asChild
-                      className="rounded-2xl bg-black text-white hover:bg-black/90 px-12! py-6 text-lg font-medium"
+                      className="rounded-2xl bg-black text-white px-12! py-6 text-lg font-medium transition-transform duration-200 ease-in-out hover:scale-105 hover:bg-neutral-800 active:scale-95"
                     >
                       <Link
                         href={
