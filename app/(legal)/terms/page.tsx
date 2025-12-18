@@ -6,9 +6,7 @@ export default function TermsPage() {
   return (
     <>
       <div className="container mx-auto max-w-215 py-10 space-y-4">
-        <Link href="/" className="inline-block">
-          <Image src={DarkLogo} alt="Brand logo" width={100} height={100} />
-        </Link>
+        <Nav/>
         <div>
           <h1 className="text-3xl font-bold">Terms &amp; Conditions</h1>
           <p className="text-neutral-500">Effective date: August 23, 2025</p>
