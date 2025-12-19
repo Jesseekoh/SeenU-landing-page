@@ -23,7 +23,7 @@ const OUTER_CIRCLE_USERS = [
 
 const OrbitingUserRing = () => {
   return (
-    <div className="relative flex h-[450px] w-full mx-auto flex-col items-center justify-center overflow-hidden">
+    <div className="h-[429px] relative z-20 lg:absolute flex w-full mx-auto flex-col items-center justify-center overflow-hidden scale-170">
       {/* Background Gradient */}
       <div className="absolute inset-0 bg-[radial-gradient(circle_at_center,var(--tw-gradient-stops))] " />
 
@@ -31,7 +31,7 @@ const OrbitingUserRing = () => {
       {/* Mobile: h-16 w-16 (64px)
          MD/LG: h-28 w-28 (112px) - Scaled down slightly to fit the tighter 450px constraint
       */}
-      <div className="relative z-20 h-16 w-16 rounded-full border-2 shadow-[0_0_30px_rgba(236,72,153,0.6)] md:h-28 md:w-28">
+      <div className="relative z-10 h-16 w-16 rounded-full border-2 shadow-[0_0_30px_rgba(236,72,153,0.6)] md:h-28 md:w-28">
         <Image
           src={CENTER_IMAGE}
           unoptimized
@@ -88,12 +88,12 @@ const OrbitingUserRing = () => {
           return (
             <div
               key={index}
-              className="absolute left-1/2 top-1/2 -ml-6 -mt-6 h-12 w-12 rounded-full border-2 border-white/60 shadow-lg md:-ml-8 md:-mt-8 md:h-16 md:w-16"
+              className="absolute  left-1/2 top-1/2 -ml-6 -mt-6 h-12 w-12 rounded-full border-2 border-white/60 shadow-lg md:-ml-8 md:-mt-8 md:h-16 md:w-16"
               style={{
                 transform: `rotate(${angle}deg) translate(var(--radius))`,
               }}
             >
-              <div className="relative h-full w-full overflow-hidden rounded-full">
+              <div className="relative h-full w-full overflow-hidden rounded-full animate-hover">
                 <Image
                   src={user}
                   alt={`Outer User ${index}`}

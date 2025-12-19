@@ -1,6 +1,7 @@
 // import Image from "next/image";
 import { ArrowDownToLine } from 'lucide-react';
 import DarkLogo from '@/public/logo-dark.svg';
+import Logo from '@/public/logo.svg';
 import Mockup from '@/public/iMockup - iPhone 15 Pro Max(2) Image.webp';
 import Navbar from '@/components/Navbar';
 import { Button } from '@/components/ui/button';
@@ -11,6 +12,8 @@ import Footer from '@/components/Footer';
 import ReviewCard from '@/components/ReviewCard';
 import ReviewsCarousel from '@/components/ReviewsCarousel';
 import FadeIn from '@/components/FadeIn';
+import Radar from '@/components/Radar';
+import StackedCards from '@/components/StackedCards';
 
 const REVIEWS = [
   {
@@ -44,20 +47,22 @@ export default function Home() {
         <main className="flex w-full flex-col">
           <section id="hero" className="bg-pink-400/70" aria-label="Hero">
             <h1 className="sr-only">SeenU - Connect with people nearby</h1>
-            <div className="container mx-auto relative pt-10 lg:pt-24 pb-8 px-6">
+            <div className="container overflow-hidden mx-auto grid place-items-center relative pt-18 lg:pt-24 pb-8 px-6">
               <OrbitingUserRing />
 
-              <div className="max-w-[800px] mx-auto text-center relative z-10">
+              <div className="w-full mx-auto text-center relative mt-4 z-10">
                 <FadeIn delay={0.2}>
                   <Image
-                    src={DarkLogo}
+                    src={Logo}
+                    // src={DarkLogo}
                     alt="SeenU Logo"
-                    className="w-full h-auto contrast-75"
-                    width={600}
+                    className="w-full h-auto"
+                    width={1280}
                     height={250}
                   />
                 </FadeIn>
               </div>
+              {/* <Radar /> */}
             </div>
           </section>
 
@@ -96,6 +101,9 @@ export default function Home() {
                   delay={0.2}
                   direction="left"
                 >
+                  <div className="w-full overflow-hidden">
+                    {/* <StackedCards /> */}
+                  </div>
                   <Image
                     className="rounded-2xl w-full block"
                     alt="Group of friends meeting in person"
