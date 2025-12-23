@@ -8,7 +8,7 @@ export const getRandomAvatars = (avatarCount: number) => {
   const avatars = new Set<string>();
 
   while (avatars.size < avatarCount) {
-    const id = Math.floor(Math.random() * 21);
+    const id = Math.floor(Math.random() * 21) + 1;
     avatars.add(`/avatars/${id}.jpg`);
   }
 

@@ -1,12 +1,17 @@
 'use client';
 
-import React, { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { getRandomAvatars } from '@/lib/utils';
 
 const OrbitingUserRing = () => {
   // Generate unique avatars: 1 center + 5 inner + 6 outer = 12 total
-  const [avatars] = useState(() => getRandomAvatars(12));
+  const [avatars, setAvatars] = useState<string[]>([]);
+
+  // Generate avatars on client-side to ensure different avatars on each load
+  useEffect(() => {
+    setAvatars(getRandomAvatars(12));
+  }, []);
 
   const CENTER_IMAGE = avatars[0];
   const INNER_CIRCLE_USERS = avatars.slice(1, 6);
