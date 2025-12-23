@@ -8,7 +8,7 @@ export default function LegalLayout({
   return (
     <>
       <div className="min-h-screen flex flex-col">
-        <header className="sticky top-0 z-50">
+        <header className="sticky top-0 z-50 backdrop-blur-lg shadow-md ">
           <div className="container mx-auto py-4 px-2">
             <Link href={'/'} className="inline-block">
               <Image src={DarkLogo} alt="SeenU Logo" width={100} height={80} />
