@@ -8,9 +8,8 @@ export const getRandomAvatars = (avatarCount: number) => {
   const avatars = new Set<string>();
 
   while (avatars.size < avatarCount) {
-    const gender = Math.random() > 0.5 ? 'men' : 'women';
-    const id = Math.floor(Math.random() * 100);
-    avatars.add(`https://randomuser.me/api/portraits/${gender}/${id}.jpg`);
+    const id = Math.floor(Math.random() * 21);
+    avatars.add(`/avatars/${id}.jpg`);
   }
 
   return Array.from(avatars);

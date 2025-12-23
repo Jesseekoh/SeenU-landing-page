@@ -7,16 +7,16 @@ type Card = {
 
 const cards: Card[] = [
   {
-    src: '/IMG-20251223-WA0037.jpg',
-    alt: 'Card 1',
+    src: '/IMG-20251223-WA0056.jpg',
+    alt: 'Some Girls holding a SeenU placard',
   },
   {
-    src: '/IMG-20251223-WA0023.jpg',
-    alt: 'Card 2',
+    src: '/IMG-20251223-WA0053.jpg',
+    alt: 'Two Girls Holding a SeenU placard',
   },
   {
-    src: '/IMG-20251223-WA0024.jpg',
-    alt: 'Card 3',
+    src: '/IMG-20251223-WA0055.jpg',
+    alt: 'Guy holding a SeenU placard',
   },
 ];
 
