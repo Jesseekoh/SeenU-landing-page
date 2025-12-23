@@ -33,6 +33,7 @@ const OrbitingUserRing = () => {
           src={CENTER_IMAGE}
           alt="Center User"
           fill
+          unoptimized
           className="rounded-full object-cover"
         />
       </div>
@@ -61,6 +62,7 @@ const OrbitingUserRing = () => {
                   src={user}
                   alt={`Inner User ${index}`}
                   fill
+                  unoptimized
                   className="object-cover"
                 />
               </div>
@@ -94,6 +96,7 @@ const OrbitingUserRing = () => {
                   src={user}
                   alt={`Outer User ${index}`}
                   fill
+                  unoptimized
                   className="object-cover"
                 />
                 {/* </div> */}
