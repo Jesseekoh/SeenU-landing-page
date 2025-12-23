@@ -1,11 +1,15 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import Image from 'next/image';
 import { getRandomAvatars } from '@/lib/utils';
 
 export default function TopFive() {
-  const [images, setImages] = useState<string[]>(getRandomAvatars(5));
+  const [images, setImages] = useState<string[]>([]);
+
+  useEffect(() => {
+    setImages(getRandomAvatars(5));
+  }, []);
 
   return (
     <div className="lg:mt-10">
