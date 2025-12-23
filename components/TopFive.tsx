@@ -22,6 +22,7 @@ export default function TopFive() {
               src={image}
               alt="User avatar"
               fill
+              unoptimized
               className="object-cover"
             />
           </div>
