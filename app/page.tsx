@@ -83,7 +83,7 @@ export default function Home() {
                   <Image
                     className="rounded-2xl w-full block"
                     alt="Group of friends meeting in person"
-                    src={'/Page 1/Medium Rectangle.webp'}
+                    src={'/Facebook Event Photo.webp'}
                     width={1280}
                     height={720}
                   />
@@ -94,7 +94,7 @@ export default function Home() {
                   direction="left"
                 >
                   <h2 className="text-3xl lg:text-5xl font-semibold">
-                    Be the first to know
+                    Discover and connect with people nearby in real time.
                   </h2>
                   <p className="text-lg lg:text-xl">
                     With friend-adding features, you can stay connected with
@@ -103,7 +103,7 @@ export default function Home() {
                     local community with classmates, neighbors, and friends.
                   </p>
 
-                  <Button
+                  {/* <Button
                     asChild
                     className="rounded-2xl bg-black text-white px-8! py-6 text-lg font-medium transition-transform duration-200 ease-in-out hover:scale-105 hover:bg-neutral-800 active:scale-95"
                   >
@@ -111,11 +111,11 @@ export default function Home() {
                       Download on iOS
                       <ArrowDownToLine className="h-4 w-4" />
                     </Link>
-                  </Button>
+                  </Button> */}
                 </FadeIn>
               </div>
 
-              <section id="reviews" className="py-20">
+              <section id="reviews">
                 <div className="max-w-7xl mx-auto px-5">
                   <FadeIn>
                     <div className="text-center mb-16 space-y-4">
