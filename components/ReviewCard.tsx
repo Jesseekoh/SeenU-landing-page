@@ -40,7 +40,7 @@ export default function ReviewCard({
         </div>
 
         <div className="flex items-center gap-3 pt-4 border-t border-neutral-200/50">
-          <span className="font-medium text-sm text-neutral-900">
+          <span className="font-medium text-neutral-900 text-lg">
             {authorName}
           </span>
         </div>
