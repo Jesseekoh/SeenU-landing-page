@@ -66,7 +66,7 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
             key={index}
             className={cn(
               'h-2.5 w-2.5 rounded-full transition-all',
-              index === selectedIndex ? 'bg-black w-6' : 'bg-neutral-100'
+              index === selectedIndex ? 'bg-black w-6' : 'bg-neutral-300'
             )}
             onClick={() => emblaApi?.scrollTo(index)}
             aria-label={`Go to slide ${index + 1}`}

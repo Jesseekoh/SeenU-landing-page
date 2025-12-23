@@ -6,6 +6,7 @@ import { ArrowDownToLine } from 'lucide-react';
 import DarkLogo from '@/public/logo-dark.svg';
 import Image from 'next/image';
 import { Button } from './ui/button';
+import { cn } from '@/lib/utils';
 
 const Navbar: React.FC = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -77,7 +78,12 @@ const Navbar: React.FC = () => {
             <div className="hidden lg:flex items-center gap-4 pr-4">
               <Link
                 href="/waitlist"
-                className="font-medium text-black hover:text-white dark:text-gray-300 dark:hover:text-pink-400 transition-colors"
+                className={cn(
+                  'font-medium text-white hover:text-pink-300 dark:hover:text-pink-400 transition-colors',
+                  scrolled
+                    ? 'text-black hover:text-pink-500 dark:hover:text-pink-400'
+                    : ''
+                )}
               >
                 Join Android Waitlist
               </Link>
@@ -85,7 +91,12 @@ const Navbar: React.FC = () => {
                 href="https://apps.apple.com/us/app/seenu/id6749520048"
                 target="_blank"
               >
-                <Button className="rounded-2xl px-6 py-6 bg-black text-white hover:bg-neutral-800 dark:bg-white dark:text-black dark:hover:bg-white/90">
+                <Button
+                  className={cn(
+                    'rounded-2xl px-6 py-6 bg-white text-black hover:bg-neutral-300 dark:bg-white dark:text-black dark:hover:bg-white/90',
+                    scrolled ? 'bg-black text-white hover:bg-neutral-800' : ''
+                  )}
+                >
                   Download App
                 </Button>
               </Link>

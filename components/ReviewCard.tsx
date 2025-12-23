@@ -1,13 +1,11 @@
 import { Star } from 'lucide-react';
 import { Card, CardContent } from './ui/card';
-import { Avatar, AvatarFallback, AvatarImage } from './ui/avatar';
 import { cn } from '@/lib/utils';
 
 interface ReviewCardProps {
   review: string;
   authorName: string;
   rating?: number;
-  avatarSrc?: string;
   className?: string;
 }
 
@@ -15,7 +13,6 @@ export default function ReviewCard({
   review,
   authorName,
   rating = 5,
-  avatarSrc,
   className,
 }: ReviewCardProps) {
   return (
@@ -37,13 +34,13 @@ export default function ReviewCard({
               />
             ))}
           </div>
-          <p className="text-neutral-700 leading-relaxed">
+          <p className="text-neutral-700 leading-relaxed text-lg">
             &ldquo;{review}&rdquo;
           </p>
         </div>
 
         <div className="flex items-center gap-3 pt-4 border-t border-neutral-200/50">
-          <span className="font-medium text-sm text-neutral-900">
+          <span className="font-medium text-neutral-900 text-lg">
             {authorName}
           </span>
         </div>
