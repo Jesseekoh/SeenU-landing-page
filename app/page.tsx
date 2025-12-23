@@ -1,4 +1,3 @@
-// import Image from "next/image";
 import { ArrowDownToLine } from 'lucide-react';
 import Mockup from '@/public/iMockup - iPhone 15 Pro Max(2) Image.webp';
 import Navbar from '@/components/Navbar';
@@ -84,6 +83,7 @@ export default function Home() {
                     className="rounded-2xl w-full block"
                     alt="Group of friends meeting in person"
                     src={'/Facebook Event Photo.webp'}
+                    unoptimized
                     width={1280}
                     height={720}
                   />
@@ -188,6 +188,7 @@ export default function Home() {
                     <div className="pointer-events-none -mb-10 lg:object-cover  lg:origin-top px-10">
                       <Image
                         src={Mockup}
+                        unoptimized
                         alt="SeeU app mockup"
                         className="object-contain"
                         priority
