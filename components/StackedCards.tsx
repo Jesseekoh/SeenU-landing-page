@@ -7,15 +7,15 @@ type Card = {
 
 const cards: Card[] = [
   {
-    src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    src: '/IMG-20251223-WA0037.jpg',
     alt: 'Card 1',
   },
   {
-    src: 'https://images.unsplash.com/photo-1683342599486-761e6afce7e4?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    src: '/IMG-20251223-WA0023.jpg',
     alt: 'Card 2',
   },
   {
-    src: 'https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fcard3.jpg&w=1600&q=75',
+    src: '/IMG-20251223-WA0024.jpg',
     alt: 'Card 3',
   },
 ];
