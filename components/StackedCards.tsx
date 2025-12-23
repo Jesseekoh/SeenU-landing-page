@@ -2,53 +2,113 @@ import Image from 'next/image';
 
 type Card = {
   src: string;
-  label: string;
+  alt: string;
 };
 
 const cards: Card[] = [
   {
-    src: 'https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fassets%2Fanimation-card-1.jpg&w=1600&q=75', // replace with your image
-    label: 'Outdoors',
+    src: 'https://images.unsplash.com/photo-1599566150163-29194dcaad36?q=80&w=687&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    alt: 'Card 1',
   },
   {
-    src: 'https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fassets%2Fanimation-card-1.jpg&w=1600&q=75',
-    label: 'Running',
+    src: 'https://images.unsplash.com/photo-1683342599486-761e6afce7e4?q=80&w=688&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D',
+    alt: 'Card 2',
   },
   {
-    src: 'https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fassets%2Fanimation-card-1.jpg&w=1600&q=75',
-    label: 'Dog parent',
+    src: 'https://bumble.com/_next/image/?url=%2Fbumble-brand-assets%2Fproject-love%2Fassets%2Fcard3.jpg&w=1600&q=75',
+    alt: 'Card 3',
   },
 ];
 
 export default function StackedCards() {
   return (
-    <div className="relative flex items-end gap-4">
-      {cards.map((card, index) => (
-        <div
-          key={card.label}
-          className="relative rounded-3xl overflow-hidden"
-          style={{
-            width: index === 0 ? 280 : 200,
-            height: index === 0 ? 360 : 260,
-            zIndex: 10 - index,
-          }}
-        >
-          {/* Image */}
-          <Image
-            src={card.src}
-            alt={card.label}
-            fill
-            className="object-cover"
-          />
+    <div className="relative flex items-center h-[276px] md:h-[320px] lg:h-[461px] w-full max-w-[400px] lg:max-w-[540px] mx-auto">
+      <div className="relative w-full h-full flex items-center">
+        {cards.map((card, index) => {
+          // Calculate position for each card:
+          // Card 0: left edge (0)
+          // Card 1: center of remaining space
+          // Card 2: right edge
+          const getPosition = () => {
+            if (index === 0) return '0px';
+            if (index === 1) return 'calc((100% - 221px) / 2)'; // Small screens
+            return 'calc(100% - 221px)'; // Card 2 touches right
+          };
 
-          {/* Vertical tag */}
-          <div className="absolute top-6 right-3">
-            <span className="bg-yellow-400 text-black text-sm font-semibold px-3 py-1 rounded-full rotate-90 inline-block">
-              {card.label}
-            </span>
-          </div>
-        </div>
-      ))}
+          const getPositionMd = () => {
+            if (index === 0) return '0px';
+            if (index === 1) return 'calc((100% - 256px) / 2)'; // Medium screens
+            return 'calc(100% - 256px)';
+          };
+
+          const getPositionLg = () => {
+            if (index === 0) return '0px';
+            if (index === 1) return 'calc((100% - 368px) / 2)'; // Large screens
+            return 'calc(100% - 368px)';
+          };
+
+          return (
+            <div
+              key={index}
+              className={`absolute flex items-center card-wrapper-${index}`}
+              style={{
+                left: getPosition(),
+                zIndex: 10 - index,
+              }}
+            >
+              {/* Responsive positioning overrides */}
+              <style
+                dangerouslySetInnerHTML={{
+                  __html: `
+                    @media (min-width: 768px) {
+                      .card-wrapper-${index} {
+                        left: ${getPositionMd()} !important;
+                      }
+                    }
+                    @media (min-width: 1024px) {
+                      .card-wrapper-${index} {
+                        left: ${getPositionLg()} !important;
+                      }
+                    }
+                  `,
+                }}
+              />
+
+              {/* Small screens: 221x276 base */}
+              <div
+                className={`relative rounded-2xl overflow-hidden 
+                  ${
+                    index === 0
+                      ? 'w-[221px] h-[276px] md:w-[256px] md:h-[320px] lg:w-[368px] lg:h-[461px]'
+                      : ''
+                  }
+                  ${
+                    index === 1
+                      ? 'w-[221px] h-[235px] md:w-[256px] md:h-[272px] lg:w-[368px] lg:h-[392px]'
+                      : ''
+                  }
+                  ${
+                    index === 2
+                      ? 'w-[221px] h-[193px] md:w-[256px] md:h-[224px] lg:w-[368px] lg:h-[323px]'
+                      : ''
+                  }
+                `}
+              >
+                <Image
+                  src={card.src}
+                  alt={card.alt}
+                  fill
+                  unoptimized
+                  className="object-cover"
+                />
+
+                {/* Overlay gradient */}
+                <div className="absolute inset-0 bg-linear-to-t from-black/40 via-transparent to-transparent" />
+              </div>
+            </div>
+          );
+        })}
+      </div>
     </div>
   );
 }
