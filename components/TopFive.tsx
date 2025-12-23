@@ -8,7 +8,7 @@ export default function TopFive() {
   const [images, setImages] = useState<string[]>(getRandomAvatars(5));
 
   return (
-    <div className="mt-10">
+    <div className="lg:mt-10">
       <h1 className="text-white font-semibold text-center mb-3 text-lg">
         Top Five
       </h1>
