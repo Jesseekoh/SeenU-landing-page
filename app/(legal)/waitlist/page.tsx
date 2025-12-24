@@ -9,7 +9,9 @@ export default function WaitlistPage() {
   const [status, setStatus] = useState<'idle' | 'loading'>('idle');
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
     const form = e.currentTarget;
+
     const botField = form['bot-field'] as HTMLInputElement;
 
     // If honeypot is filled, likely a bot. Pretend success but do nothing.
@@ -21,6 +23,22 @@ export default function WaitlistPage() {
 
     setStatus('loading');
     // Let the form submit naturally to Netlify
+    const formData = new FormData(form);
+
+    const formEntries = Object.fromEntries(
+      Array.from(formData.entries()).map(([key, value]) => [
+        key,
+        typeof value === 'string' ? value : value.name,
+      ])
+    );
+
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: new URLSearchParams(formEntries).toString(),
+    })
+      .then(() => router.push('/thank-you'))
+      .catch((error) => alert(error));
   };
 
   return (
@@ -39,17 +57,16 @@ export default function WaitlistPage() {
             </div>
 
             <form
-              name="waitlist"
+              name="android-waitlist"
               method="POST"
-              action="/thank-you"
+              // action="/thank-you"
               data-netlify="true"
               data-netlify-honeypot="bot-field"
               onSubmit={handleSubmit}
               className="mt-8 space-y-4 rounded-2xl border p-6 bg-card"
             >
               {/* Hidden input for Netlify Forms */}
-              <input type="hidden" name="form-name" value="waitlist" />
-
+              <input type="hidden" name="form-name" value="android-waitlist" />
               {/* HONEYPOT FIELD - bot should keep this empty */}
               <div className="hidden">
                 <label htmlFor="bot-field">
@@ -77,7 +94,6 @@ export default function WaitlistPage() {
                   className="w-full rounded-md border-input bg-background px-3 py-2 outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
-
               <div className="space-y-2">
                 <label htmlFor="email" className="text-sm font-medium">
                   Email
@@ -91,7 +107,6 @@ export default function WaitlistPage() {
                   className="w-full rounded-md border-input bg-background px-3 py-2 outline-none focus:ring-2 focus:ring-ring"
                 />
               </div>
-
               <Button
                 type="submit"
                 className="w-full py-6"
