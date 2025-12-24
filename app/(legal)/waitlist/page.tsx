@@ -39,6 +39,7 @@ export default function WaitlistPage() {
   return (
     <>
       {/*<Navbar withDark={true} />*/}
+      
       <main className="flex w-full flex-col">
         <section className="container mx-auto px-6 pt-28 pb-16">
           <div className="max-w-xl mx-auto">

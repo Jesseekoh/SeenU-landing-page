@@ -8,6 +8,7 @@ export default function LegalLayout({
 }: Readonly<{ children: React.ReactNode }>) {
   return (
     <>
+    <Nav />
       <div className="min-h-screen flex flex-col">
         <div className="px-4 flex-1">{children}</div>
         <Footer />

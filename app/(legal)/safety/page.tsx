@@ -7,7 +7,7 @@ export default function SafetyPage() {
   return (
     <>
       <div className="container mx-auto max-w-215 py-10 space-y-4">
-        <Nav/>
+        <Nav />
         <div>
           <h1 className="text-3xl font-bold">
             Child Safety Standards for SeenU
