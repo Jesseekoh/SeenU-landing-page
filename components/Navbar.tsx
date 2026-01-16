@@ -166,7 +166,7 @@ const Navbar: React.FC = () => {
               <Link
                 href="https://apps.apple.com/us/app/seenu/id6749520048"
                 target="_blank"
-                className="mt-2 block rounded-lg bg-gray-900 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/90 transition-colors"
+                className="mt-3 block rounded-lg bg-gray-900 px-3 py-2 text-center text-sm font-semibold text-white shadow-sm hover:bg-black/80 dark:bg-white dark:text-black dark:hover:bg-white/90 transition-colors"
                 onClick={() => setIsMenuOpen(false)}
               >
                 Download App
